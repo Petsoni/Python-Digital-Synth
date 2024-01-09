@@ -1,8 +1,10 @@
+import math
+
 import pyaudio
 import Signals
 
 time = 0
-pAudio = pyaudio.PyAudio()
+p_audio = pyaudio.PyAudio()
 
 audio_function = lambda x: 0
 
@@ -22,11 +24,11 @@ def callback(in_data, frame_count, time_info, flag):
     return k, pyaudio.paContinue
 
 
-stream = pAudio.open(format=pAudio.get_format_from_width(2),
-                     channels=1,
-                     rate=Signals.sampling_frequency,
-                     output=True,
-                     stream_callback=callback)
+stream = p_audio.open(format=p_audio.get_format_from_width(2),
+                      channels=1,
+                      rate=Signals.sampling_frequency,
+                      output=True,
+                      stream_callback=callback)
 
 
 def start():
@@ -39,4 +41,4 @@ def stop():
 
 
 def terminate():
-    pAudio.terminate()
+    p_audio.terminate()

@@ -116,13 +116,16 @@ class Main(QtWidgets.QMainWindow):
             return 1
         return y
 
+    def closeEvent(self, a0):
+        Audio.stop()
+        Audio.terminate()
+        a0.accept();
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = Main()
     window.show()
     Audio.start()
-    Audio.audioFunction = lambda n: window.get_audio_function(n)
-    Audio.stop()
-    Audio.terminate()
+    Audio.audio_function = lambda n: window.get_audio_function(n)
     sys.exit(app.exec_())

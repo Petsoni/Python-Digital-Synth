@@ -114,7 +114,7 @@ def ramp_wave_integral(frequency, n):
     return k + k * k / new_n
 
 
-def noise_wave():
+def noise_wave(a1, a2):
     """
     Returns a random value between -1 and 1
     :return:
@@ -209,5 +209,5 @@ def to_pcm(value) -> bytes:
     :return:
     """
     if abs(value) < 0.00001:
-        return b'\x00\x00'
-    return math.floor((value) * 65535 / 2).to_bytes(2, byteorder='little', signed=True)
+        value = 0
+    return math.floor(value * 65535 / 2).to_bytes(2, byteorder='little', signed=True)
