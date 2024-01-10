@@ -2,21 +2,18 @@ import sys
 
 from PyQt5 import QtWidgets, uic
 
-import Audio
-import Signals
-from audio_effects import Filters
-from audio_parts.Modulator import Modulator
-from audio_parts.Oscillator import Oscillator
-
-sampling_frequency = 44100
-second = sampling_frequency
+from sound_modulator import Signals, Audio
+from sound_modulator.Signals import sampling_frequency
+from sound_modulator.audio_effects import Filters
+from sound_modulator.audio_parts.Modulator import Modulator
+from sound_modulator.audio_parts.Oscillator import Oscillator
 
 
 class Main(QtWidgets.QMainWindow):
 
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self, parent=None)
-        uic.loadUi('main.ui', self)
+        uic.loadUi('sound_modulator/main.ui', self)
         self.setWindowTitle('Digital Synthetizer')
         self.statusbar.showMessage('Sampling Frequency: ' + str(sampling_frequency) + ' Hz')
 

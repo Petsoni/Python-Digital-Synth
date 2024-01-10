@@ -1,7 +1,7 @@
 import math
 import random
 
-from main import sampling_frequency
+sampling_frequency = 44100
 
 
 def sine_wave(frequency, n):

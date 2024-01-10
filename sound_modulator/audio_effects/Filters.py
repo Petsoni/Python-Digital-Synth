@@ -1,4 +1,4 @@
-import Audio
+from sound_modulator import Audio
 
 
 def low_pass_filter(x, gain, frequency, n):

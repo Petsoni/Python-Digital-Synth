@@ -1,3 +1,4 @@
 pyaudio
 PyQt5
 numpy
+pygame

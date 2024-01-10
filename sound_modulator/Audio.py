@@ -1,7 +1,6 @@
-import math
-
 import pyaudio
-import Signals
+
+from sound_modulator import Signals
 
 time = 0
 p_audio = pyaudio.PyAudio()
