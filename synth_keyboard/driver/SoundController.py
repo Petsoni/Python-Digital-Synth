@@ -5,6 +5,9 @@ from synth_keyboard.driver.Synth import Synth
 
 
 class SoundController:
+    """
+    TODO
+    """
     def __init__(self, notes):
         self.running = 1
         self.mod = 1
@@ -33,6 +36,11 @@ class SoundController:
         pg.quit()
 
     def handle_event(self, event):
+        """
+        TODO
+        :param event:
+        :return:
+        """
 
         if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
             self.running = False
